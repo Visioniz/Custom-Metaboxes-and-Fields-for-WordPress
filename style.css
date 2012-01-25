@@ -327,7 +327,3 @@ div.time-picker li.selected { background: #0063CE; color: #fff; }
      width: 200px; /*must have*/
      height: 200px; /*must have*/
  }
- 
-.tabs .ui-tabs-nav li{ float:left; padding:10px 10px 5px 10px; margin-bottom:0px; margin-right: -1px; border-left:1px solid #E9E9E9; border-right:1px solid #E9E9E9; border-top:1px solid #E9E9E9; }
-.tabs .ui-tabs-nav .ui-tabs-selected{background: #E9E9E9;}
-.tabs .ui-tabs-nav{border-bottom:1px solid #E9E9E9;}

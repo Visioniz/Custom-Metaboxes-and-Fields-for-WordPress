@@ -30,10 +30,6 @@ jQuery(document).ready(function ($) {
 			step: 30
 		});
 	});
-	
-	// RUN JQUERY TABS
-	// ============================== -->
-	$(".tabs").tabs();	
 
 	/**
 	 * Initialize jQuery UI datepicker (this will be moved inline in a future release)
