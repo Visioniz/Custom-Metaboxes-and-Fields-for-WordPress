@@ -23,11 +23,31 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 	$meta_boxes[] = array(
 		'id'         => 'test_metabox',
 		'title'      => 'Test Metabox',
-		'pages'      => array( 'page', ), // Post type
+		'pages'      => array( 'omfg-mobile-pro'), // Post type
 		'context'    => 'normal',
-		'priority'   => 'high',
+		'priority'   => 'low',
 		'show_names' => true, // Show field names on the left
 		'fields'     => array(
+						
+			// CREATES THE TAB ANCHORS
+			// ================================ -->
+			array(
+				'type' => 'tabanchors',
+				'tabs' => array(
+					array( 'name' => 'General Settings', 'value' => 'tab1', ),
+					array( 'name' => 'Style Settings', 'value' => 'tab2', ),
+					array( 'name' => 'Social Settings', 'value' => 'tab3', ),
+				)
+			),
+			
+			
+			// BEGINS CONTENT IN TAB 1
+			// ================================ -->
+			array(
+				'type' => 'section',
+				'id' => 'tab1',
+			),
+			
 			array(
 				'name' => 'Test Text',
 				'desc' => 'field description (optional)',
@@ -82,7 +102,16 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 	            'id'   => $prefix . 'test_colorpicker',
 	            'type' => 'colorpicker',
 				'std'  => '#ffffff'
-	        ),
+	        ),			
+
+			array(
+				'type' => 'close',
+			),
+			array(
+				'type' => 'section',
+				'id' => 'tab2',
+			),
+						
 			array(
 				'name' => 'Test Text Area',
 				'desc' => 'field description (optional)',
@@ -118,6 +147,15 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 					array( 'name' => 'Option Three', 'value' => 'none', ),
 				),
 			),
+
+			array(
+				'type' => 'close',
+			),
+			array(
+				'type' => 'section',
+				'id' => 'tab3',
+			),
+			
 			array(
 				'name'    => 'Test Radio inline',
 				'desc'    => 'field description (optional)',
@@ -129,6 +167,7 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 					array( 'name' => 'Option Three', 'value' => 'none', ),
 				),
 			),
+			
 			array(
 				'name'    => 'Test Radio',
 				'desc'    => 'field description (optional)',
@@ -145,14 +184,14 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'desc'     => 'Description Goes Here',
 				'id'       => $prefix . 'text_taxonomy_radio',
 				'type'     => 'taxonomy_radio',
-				'taxonomy' => '', // Taxonomy Slug
+				'taxonomy' => 'category', // Taxonomy Slug
 			),
 			array(
 				'name'     => 'Test Taxonomy Select',
 				'desc'     => 'Description Goes Here',
 				'id'       => $prefix . 'text_taxonomy_select',
 				'type'     => 'taxonomy_select',
-				'taxonomy' => '', // Taxonomy Slug
+				'taxonomy' => 'category', // Taxonomy Slug
 			),
 			array(
 				'name' => 'Test Checkbox',
@@ -184,25 +223,10 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'id'   => $prefix . 'test_image',
 				'type' => 'file',
 			),
-		),
-	);
-
-	$meta_boxes[] = array(
-		'id'         => 'about_page_metabox',
-		'title'      => 'About Page Metabox',
-		'pages'      => array( 'page', ), // Post type
-		'context'    => 'normal',
-		'priority'   => 'high',
-		'show_names' => true, // Show field names on the left
-		'show_on'    => array( 'key' => 'id', 'value' => array( 2, ), ), // Specific post IDs to display this metabox
-		'fields' => array(
 			array(
-				'name' => 'Test Text',
-				'desc' => 'field description (optional)',
-				'id'   => $prefix . 'test_text',
-				'type' => 'text',
+				'type' => 'close',
 			),
-		)
+		),
 	);
 
 	// Add other metaboxes as needed
